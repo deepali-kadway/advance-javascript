@@ -1,4 +1,5 @@
 // WHat is JQuery?
+// jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
 
 // The document needs to be ready before we can manipulate it using jQuery
 // Specify a function to run when the DOM is fully loaded
@@ -21,12 +22,18 @@ $(document).ready(function (){
         $("body").append('<div id="result"></div>');
 
         //get div element with id="result" and set the innerHTML using .html() method
-        $("#result").html(`<h2>Form Data</h2>
+        $("#result").html(`<h2 id="data-heading">Form Data</h2>
             <ul>
                 <li>Email: ${email}</li>    
                 <li>Password: ${password}</li>    
-            </ul>`)
-
+            </ul>`).addClass("bg-primary text-white p-2 mt-3 rounded");
+        
+        
+        //update h2 text using .text() function
+        $("#data-heading").text("Form Data Submitted with jQuery");
+        
+        // update the remember checkbox value using .attr()
+        $("#remember").val("remembered").attr("checked", true);
         event.preventDefault(); // Prevent the default form submission
     })
 })
