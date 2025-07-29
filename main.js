@@ -26,7 +26,9 @@ $(document).ready(function (){
             <ul>
                 <li>Email: ${email}</li>    
                 <li>Password: ${password}</li>    
-            </ul>`).addClass("bg-primary text-white p-2 mt-3 rounded");
+            </ul>
+            <button id="cancel" class="btn btn-danger text-white">X</button>`)
+            .addClass("bg-primary text-white p-2 mt-3 rounded");
         
         
         //update h2 text using .text() function
@@ -34,6 +36,12 @@ $(document).ready(function (){
         
         // update the remember checkbox value using .attr()
         $("#remember").val("remembered").attr("checked", true);
+
+        // attach a click event handler to the cancel button
+        $("#cancel").on("click", function () {
+            $("#result").hide();
+        })
+
         event.preventDefault(); // Prevent the default form submission
     })
 })
